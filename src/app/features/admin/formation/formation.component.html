@@ -1,0 +1,61 @@
+<div class="e-container">
+
+  <div class="row mt-3 mb-3 justify-content-between align-items-center">
+    <div class="scale-in-center">
+      <p class="e-title">
+        <span class="material-icons e-title-icon">drive_file_rename_outline</span>
+        demandes de formations
+      </p>
+    </div>
+  </div>
+
+  <div class="row scale-in-center">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+
+      <ng-container matColumnDef="libelleFormation">
+        <mat-header-cell *matHeaderCellDef>Libelle</mat-header-cell>
+        <mat-cell *matCellDef="let formation">
+          <p class="cell-text"> {{formation.libelleFormation}} </p>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="raisonFormation">
+        <mat-header-cell *matHeaderCellDef>Raison</mat-header-cell>
+        <mat-cell *matCellDef="let formation">
+          <p class="cell-text"> {{formation.raisonFormation}} </p>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="employeNom">
+        <mat-header-cell *matHeaderCellDef>Employe Nom</mat-header-cell>
+        <mat-cell *matCellDef="let formation">
+          <p class="cell-text"> {{formation.employe.nom}} </p>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="employePrenom">
+        <mat-header-cell *matHeaderCellDef>Employe Prénom</mat-header-cell>
+        <mat-cell *matCellDef="let formation">
+          <p class="cell-text"> {{formation.employe.prenom}} </p>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+        <mat-cell *matCellDef="let formation">
+          <p *ngIf="formation.status !== 'PENDING'" class="cell-text status" [ngClass]="formation.status"> {{formation.status}} </p>
+          <div *ngIf="formation.status === 'PENDING'" class="cell-btn">
+            <mat-icon class="pointer" (click)="changeStatus(formation, 'accepted')" color="success">done</mat-icon>
+          </div>
+          <div *ngIf="formation.status === 'PENDING'" class="cell-btn">
+            <mat-icon class="pointer" (click)="changeStatus(formation, 'refused')" color="danger">delete</mat-icon>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row class="mat-header-row text-center" *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row class="mat-row" *matRowDef="let type; columns: displayedColumns;"></mat-row>
+    </table>
+  </div>
+</div>
+

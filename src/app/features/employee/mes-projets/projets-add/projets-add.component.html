@@ -1,0 +1,48 @@
+<div class="dialog-container">
+
+  <p class="dialog-title" >Add Projet</p>
+
+  <form [formGroup]="addForm" class="row justify-content-center align-items-center scale-in-center mt-3 p-4">
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Libelle</mat-label>
+        <input  formControlName="libelle" matInput type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Competence Ajoutée</mat-label>
+        <input  formControlName="competenceAjoutee" matInput type="text" >
+      </mat-form-field>
+    </div>
+
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Date de début</mat-label>
+        <input formControlName="dateDebut" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Date de fin</mat-label>
+        <input formControlName="dateFin" matInput [matDatepicker]="picker1">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12" >
+      <button class="submit-btn full-width" (click)="add()" [disabled]="!addForm.valid">
+        save
+      </button>
+    </div>
+
+  </form>
+
+</div>

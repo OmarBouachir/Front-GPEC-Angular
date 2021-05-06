@@ -1,0 +1,240 @@
+<div class="dialog-container">
+
+  <p class="dialog-title" >Modifier un employé</p>
+
+  <form [formGroup]="updateForm" class="row justify-content-center align-items-center scale-in-center mt-3 p-4">
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Nom</mat-label>
+        <input  formControlName="nom" name="nom" matInput type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Prénom</mat-label>
+        <input  formControlName="prenom" matInput type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Matricule</mat-label>
+        <input formControlName="matricule" matInput  type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Date et lieu de naissance</mat-label>
+        <input  formControlName="dateLieuNaissance" matInput  type="text" >
+      </mat-form-field>
+    </div>
+
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Nationalité</mat-label>
+        <input  formControlName="nationnalite" matInput type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Etat civile</mat-label>
+        <input  formControlName="etatCivil" matInput type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Nomber d'enfant</mat-label>
+        <input  formControlName="nombreEnfant" matInput  type="number" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Addresse</mat-label>
+        <input  formControlName="adresse" matInput  type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>CIN</mat-label>
+        <input  formControlName="cin" matInput type="number" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Délivré Le</mat-label>
+        <input formControlName="delivreLe" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Téléphone</mat-label>
+        <input  formControlName="tel" matInput type="number" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Numéro CNSS</mat-label>
+        <input  formControlName="numeroCnss" matInput type="number" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Catégorie permis de conduite</mat-label>
+        <input  formControlName="categoriePermis" matInput  type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Numéro permis de conduite</mat-label>
+        <input  formControlName="numeroPermisConduire" matInput type="number" >
+      </mat-form-field>
+    </div>
+
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Niveau Instruction</mat-label>
+        <input  formControlName="niveauInstruction" matInput  type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Diplome</mat-label>
+        <input  formControlName="diplome" matInput type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Année</mat-label>
+        <input  formControlName="anneeDiplome" matInput type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Etablissement</mat-label>
+        <input  formControlName="etablissement" matInput type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Date d'embauche</mat-label>
+        <input formControlName="dateEmbauche" matInput [matDatepicker]="picker1">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Type de contrat</mat-label>
+        <input  formControlName="typeContrat" matInput  type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Début de contrat</mat-label>
+        <input formControlName="debutContrat" matInput [matDatepicker]="picker2">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Fin de contrat</mat-label>
+        <input formControlName="finContrat" matInput [matDatepicker]="picker3">
+        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+        <mat-datepicker #picker3></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Salaire net</mat-label>
+        <input  formControlName="salaireNet" matInput type="number" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Qualifiation</mat-label>
+        <input  formControlName="qualification" matInput  type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Date début qualification</mat-label>
+        <input  formControlName="dateDebutQualification"  matInput [matDatepicker]="picker4">
+        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+        <mat-datepicker #picker4></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Affectation</mat-label>
+        <input  formControlName="affectation" matInput  type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Département</mat-label>
+        <input  formControlName="departement" matInput type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Section</mat-label>
+        <input  formControlName="section" matInput type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Date Titularisation</mat-label>
+        <input  formControlName="dateTitularisation" matInput [matDatepicker]="picker5">
+        <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+        <mat-datepicker #picker5></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Compétence academique</mat-label>
+        <input  formControlName="competenceAcademique" matInput type="text" >
+      </mat-form-field>
+    </div>
+
+    <div class="col-12" >
+      <button class="submit-btn full-width" (click)="update()" [disabled]="!updateForm.valid">
+        Appliquer les modifications
+      </button>
+    </div>
+
+  </form>
+
+</div>

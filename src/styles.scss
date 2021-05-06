@@ -1,0 +1,43 @@
+// material UI
+@import '~@angular/material/theming';
+@include mat-core();
+$front-end-primary: mat-palette($mat-grey);
+$front-end-accent: mat-palette($mat-pink, A200, A100, A400);
+$front-end-warn: mat-palette($mat-red);
+$front-end-theme: mat-light-theme($front-end-primary, $front-end-accent, $front-end-warn);
+@include angular-material-theme($front-end-theme);
+
+// leafley JS
+@import "~leaflet/dist/leaflet.css";
+
+// custom scss
+@import "assets/styles/components/snackbar";
+@import "assets/styles/components/animations";
+@import "assets/styles/components/buttons";
+@import "assets/styles/utilities.scss" ;
+@import "assets/styles/pages/dialog";
+@import "assets/styles/pages/container";
+@import "assets/styles/components/card";
+@import "assets/styles/components/table";
+
+
+
+html, body {
+  height: 100% !important;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+  background-color: #f9f7f7 !important;
+}
+
+.row {
+  margin: 0 !important;
+}
+
+
+
+
+
+

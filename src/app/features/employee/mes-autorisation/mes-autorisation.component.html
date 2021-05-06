@@ -1,0 +1,52 @@
+<div class="e-container" >
+
+  <div class="row mt-3 mb-3 justify-content-between align-items-center">
+    <div class="scale-in-center">
+      <p class="e-title">
+        <span class="material-icons e-title-icon">assignment_turned_in</span>
+        Mes Autorisations
+      </p>
+    </div>
+    <button class="btn ml-2 scale-in-center"  (click)="openAddDialog()"  mat-ripple>
+      <i class="material-icons icon-blue" >
+        add
+      </i>
+    </button>
+  </div>
+
+  <div class="row scale-in-center" *ngIf="autorisations?.length != 0">
+    <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+
+      <ng-container matColumnDef="raissonAutorisation" >
+        <mat-header-cell *matHeaderCellDef >Raison d'autorisation</mat-header-cell>
+        <mat-cell *matCellDef="let autorisation" >
+          <p class="cell-text"  > {{autorisation.raissonAutorisation}} </p>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="dateAutorisation">
+        <mat-header-cell *matHeaderCellDef >Date</mat-header-cell>
+        <mat-cell *matCellDef="let autorisation" >
+          <p class="cell-text" > {{autorisation.dateAutorisation | date}} </p>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef >Status</mat-header-cell>
+        <mat-cell *matCellDef="let autorisation" >
+          <p class="cell-text status" [ngClass]="autorisation.status" > {{autorisation.status}} </p>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row class="mat-header-row text-center" *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row class="mat-row" *matRowDef="let type; columns: displayedColumns;" ></mat-row>
+    </table>
+    <mat-paginator class="full-width" [pageSizeOptions]="[10]"></mat-paginator>
+
+  </div>
+
+  <div class="row justify-content-center align-items-center scale-in-center">
+    <p class="col-12 text-center server-error mt-3" *ngIf="autorisations?.length == 0" >Aucune demande trouvé</p>
+  </div>
+
+</div>

@@ -1,0 +1,56 @@
+ .e-container {
+    min-height: 90vh;
+    margin: 10px 5% ;
+
+    .e-title {
+      font-weight: 400;
+      font-size: 130%;
+      color : $blue-primary;
+      text-transform: uppercase;
+      margin: 0;
+      display: block;
+    }
+
+    .e-title-icon {
+      padding: 14px 15px 12px 15px ;
+      border-radius: 5px ;
+      background-color: $blue-tertiary ;
+      color : $blue-primary ;
+      width: 55px;
+      height: 55px;
+      margin-right: 10px;
+      border: 1px solid $blue-primary ;
+    }
+
+    .btn {
+      border: 1px solid $blue-primary ;
+      padding: 12px 15px 12px 15px;
+      border-radius: 5px;
+      background-color: $blue-tertiary;
+      color : $blue-primary ;
+      transition: 0.4s ;
+      outline: none !important;
+      i {
+        transition: 0.4s ;
+      }
+
+    }
+
+
+    .btn:hover {
+      border: 1px solid $blue-secondary;
+      background-color: $blue-secondary;
+      i {
+        color : #f9f7f7 ;
+      }
+
+    }
+
+    .server-error {
+      font-size: 120% !important;
+      font-weight:  500 !important;
+      color: $blue-primary;
+    }
+  }
+
+

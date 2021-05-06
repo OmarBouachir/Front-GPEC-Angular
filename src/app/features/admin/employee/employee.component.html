@@ -1,0 +1,87 @@
+<div class="e-container" >
+
+  <div class="row mt-3 mb-3 justify-content-between align-items-center">
+    <div class="scale-in-center">
+      <p class="e-title">
+        <span class="material-icons e-title-icon">people</span>
+        Gestion des employées
+      </p>
+    </div>
+    <div>
+      <input style="color: crimson;" type="text" name="prenom" placeholder="Search..."   >
+    </div>
+      <button class="btn ml-2 scale-in-center"  (click)="openAddDialog()"  mat-ripple>
+      <i class="material-icons icon-blue" >
+        add
+      </i>
+    </button>
+    
+  </div>
+  <div class="row scale-in-center">
+    <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+
+      <ng-container matColumnDef="nom" >
+        <mat-header-cell *matHeaderCellDef >Nom</mat-header-cell>
+        <mat-cell *matCellDef="let employe" >
+          <p class="cell-text"  > {{employe.nom}} </p>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="prenom">
+        <mat-header-cell *matHeaderCellDef >Prénom</mat-header-cell>
+        <mat-cell *matCellDef="let employe" >
+          <p class="cell-text" > {{employe.prenom}} </p>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="matricule">
+        <mat-header-cell *matHeaderCellDef >Matricule</mat-header-cell>
+        <mat-cell *matCellDef="let employe" >
+          <p class="cell-text" > {{employe.matricule}} </p>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="cin">
+        <mat-header-cell *matHeaderCellDef >CIN</mat-header-cell>
+        <mat-cell *matCellDef="let employe" >
+          <p class="cell-text" > {{employe.cin}} </p>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="tel">
+        <mat-header-cell *matHeaderCellDef >Téléphone</mat-header-cell>
+        <mat-cell *matCellDef="let employe" >
+          <p class="cell-text" > {{employe.tel}} </p>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+        <mat-cell *matCellDef="let employe">
+
+          <div class="cell-btn">
+            <mat-icon class="pointer" (click)="openDetailsDialog(employe)">list</mat-icon>
+          </div>
+
+          <div class="cell-btn">
+            <mat-icon class="pointer" (click)="openUpdateDialog(employe)" >mode_edit</mat-icon>
+          </div>
+
+          <div class="cell-btn">
+            <mat-icon class="pointer" (click)="openDeleteDialog(employe.id)" >delete</mat-icon>
+          </div>
+
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row class="mat-header-row text-center" *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row class="mat-row" *matRowDef="let type; columns: displayedColumns;" ></mat-row>
+    </table>
+
+  </div>
+
+  <div class="row justify-content-center align-items-center scale-in-center">
+    <p class="col-12 text-center server-error mt-3" *ngIf="employees?.length == 0" >Aucun employé trouvé</p>
+  </div>
+
+</div>

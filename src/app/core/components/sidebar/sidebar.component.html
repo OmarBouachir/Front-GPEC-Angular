@@ -1,0 +1,70 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+               (closed)="events.push('close!')">
+    <div class="sidenav">
+      <img src="../../../../assets/img/logo.png" class="img-fluid">
+      <mat-list role="list">
+
+        <mat-list-item *ngIf="role !='employe'"  role="listitem" routerLink="/main/employees" routerLinkActive="active" >
+          <span class="material-icons">people</span>
+          Gestion des employées
+        </mat-list-item>
+
+        <mat-list-item *ngIf="role !='employe'" role="listitem" routerLink="/main/conges" routerLinkActive="active" >
+          <span class="material-icons">home_work</span>
+          Demandes de congé
+        </mat-list-item>
+
+        <mat-list-item *ngIf="role !='employe'" role="listitem" routerLink="/main/autorisations" routerLinkActive="active">
+          <span class="material-icons">assignment_turned_in</span>
+          Demandes d'autorisation
+        </mat-list-item>
+
+        <mat-list-item *ngIf="role !='employe'" role="listitem" routerLink="/main/formations" routerLinkActive="active" >
+          <span class="material-icons">drive_file_rename_outline</span>
+          Demandes de formation
+        </mat-list-item>
+
+        <mat-list-item *ngIf="role !='employe'" role="listitem" routerLink="/main/statistique" routerLinkActive="active" >
+          <span class="material-icons">equalizer</span>
+          Statistiques
+        </mat-list-item>
+
+        <mat-list-item *ngIf="role =='employe'" role="listitem" routerLink="/main/mes-conges" routerLinkActive="active" >
+          <span class="material-icons">home_work</span>
+          Mes congés
+        </mat-list-item>
+
+        <mat-list-item *ngIf="role =='employe'" role="listitem" routerLink="/main/mes-autorisations" routerLinkActive="active">
+          <span class="material-icons">assignment_turned_in</span>
+          Mes autorisations
+        </mat-list-item>
+
+        <mat-list-item *ngIf="role =='employe'" role="listitem" routerLink="/main/mes-formations" routerLinkActive="active" >
+          <span class="material-icons">drive_file_rename_outline</span>
+          Mes formations
+        </mat-list-item>
+
+        <mat-list-item *ngIf="role =='employe'" role="listitem" routerLink="/main/mes-projets" routerLinkActive="active" >
+          <span class="material-icons">psychology</span>
+          Mes projets
+        </mat-list-item>
+
+        <mat-list-item role="listitem" (click)="logout()" >
+          <span class="material-icons">power_settings_new</span>
+          Se déconnecter
+        </mat-list-item>
+
+      </mat-list>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content >
+    <mat-toolbar style="background-color: #393e46 ; color: #d7d7d7" >
+      <button mat-icon-button (click)="sidenav.toggle()" ><mat-icon>menu</mat-icon></button>
+      <h1></h1>
+    </mat-toolbar>
+    <ng-content></ng-content>
+    <p class="footer">All rights reserved ©2021.</p>
+  </mat-sidenav-content>
+</mat-sidenav-container>
