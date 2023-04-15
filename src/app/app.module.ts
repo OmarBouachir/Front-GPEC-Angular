@@ -8,7 +8,6 @@ import { SpinnerComponent } from './core/components/spinner/spinner.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
 import {Ng2SearchPipeModule} from 'ng2-search-filter' ;
-
 import {
     MatButtonModule,
     MatDialogModule,
@@ -24,6 +23,8 @@ import {
   declarations: [
     AppComponent,
     SpinnerComponent,
+    
+    
   ],
     imports: [
         ReactiveFormsModule,

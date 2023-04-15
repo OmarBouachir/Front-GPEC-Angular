@@ -27,9 +27,12 @@
 
         <mat-list-item *ngIf="role !='employe'" role="listitem" routerLink="/main/statistique" routerLinkActive="active" >
           <span class="material-icons">equalizer</span>
-          Statistiques
+          Statistique
         </mat-list-item>
-
+        <mat-list-item *ngIf="role !='employe'" role="listitem" routerLink="/main/organigramme" routerLinkActive="active" >
+          <span class="material-icons">equalizer</span>
+          organigramme
+        </mat-list-item>
         <mat-list-item *ngIf="role =='employe'" role="listitem" routerLink="/main/mes-conges" routerLinkActive="active" >
           <span class="material-icons">home_work</span>
           Mes congés

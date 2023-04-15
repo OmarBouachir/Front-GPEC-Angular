@@ -19,6 +19,7 @@ import { EmployeeUpdateComponent } from '../admin/employee/employee-update/emplo
 import { EmployeeDetailsComponent } from '../admin/employee/employee-details/employee-details.component';
 import { EmployeeDeleteComponent } from '../admin/employee/employee-delete/employee-delete.component';
 import { StatistiqueComponent } from '../admin/statistique/statistique.component';
+
 import {
   MatCardModule,
   MatButtonModule,
@@ -39,6 +40,9 @@ import {
 } from '@angular/material';
 import {MesProjetsComponent} from '../employee/mes-projets/mes-projets.component';
 import {ProjetsAddComponent} from '../employee/mes-projets/projets-add/projets-add.component';
+import { OrganigrammeComponent } from '../admin/organigramme/organigramme.component';
+import { from } from 'rxjs';
+import { StatComponent } from '../admin/statistique/stat/stat.component';
 
 const routes: Routes = [
   {
@@ -86,6 +90,10 @@ const routes: Routes = [
         path: 'statistique',
         component : StatistiqueComponent
       },
+      {
+        path: 'organigramme',
+        component: OrganigrammeComponent
+      },
     ]
   },
 ];
@@ -94,10 +102,12 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     StatistiqueComponent,
+    OrganigrammeComponent,
     SidebarComponent,
     MainComponent,
     EmployeeComponent,
     EmployeeAddComponent ,
+    StatComponent,
     CongeComponent ,
     AutorisationComponent,
     FormationComponent,
@@ -144,6 +154,7 @@ const routes: Routes = [
     EmployeeDetailsComponent,
     EmployeeDeleteComponent,
     ProjetsAddComponent,
+    StatComponent
   ]
 })
 export class MainModule { }

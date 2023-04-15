@@ -11,6 +11,7 @@ $front-end-theme: mat-light-theme($front-end-primary, $front-end-accent, $front-
 @import "~leaflet/dist/leaflet.css";
 
 // custom scss
+@import '~/_theming.scss';
 @import "assets/styles/components/snackbar";
 @import "assets/styles/components/animations";
 @import "assets/styles/components/buttons";
